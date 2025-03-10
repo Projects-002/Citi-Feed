@@ -1,3 +1,37 @@
+<?php
+
+include '../Database/db.php';
+
+if(isset($_POST['submit'])){
+
+
+$name = $_POST['name'];
+$id = $_POST['id'];
+$email = $_POST['email'];
+$pass = $_POST['pass'];
+
+
+$sql ="INSERT INTO users(u_name,id_number, email, pass) VALUES('$name', '$id','$email','$pass')";
+
+$result = mysqli_query($conn, $sql);
+
+if($result){
+    echo"<script>alert('User Registered Successfully!')</script>";
+}else{
+    echo"<script>alert('There was an error kindly try again')</script>";
+}
+
+
+
+
+}
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,23 +116,23 @@
 <body>
     <div class="container">
         <h1>Citizen Feedback Sign-In</h1>
-        <form action="/submit-feedback" method="POST">
+        <form action="signup.php" method="POST">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
             <label for="id-number">ID Number:</label>
-            <input type="text" id="id-number" name="id-number" required>
+            <input type="text" id="id-number" name="id" required>
 
-            <label for="address">Address:</label>
-            <input type="text" id="address" name="address" required>
+            <label for="address">Email Address:</label>
+            <input type="text" id="address" name="email" required>
 
             <label for="password">Create Password:</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="pass" required>
 
             <label for="confirm-password">Confirm Password:</label>
-            <input type="password" id="confirm-password" name="confirm-password" required>
+            <input type="password" id="confirm-password" name="confirm" required>
 
-            <button type="submit">Sign In</button>
+            <button type="submit" name="submit">Sign In</button>
         </form>
     </div>
 </body>
