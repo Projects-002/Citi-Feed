@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Citizen Feedback Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url("/Assets/img/back.jpg"); /* Path to the logo */
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            height: 100vh; /* Full viewport height */
+        }
+    
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            /* Remove background-color to make the logo clearly visible */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+    
+        .login-form {
+            /* width: 300px; */
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background for the form */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+    
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+    
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+    
+        input {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    
+        button:hover {
+            background-color: #0056b3;
+        }
+    
+        .error-message {
+            color: red;
+            text-align: center;
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <form class="login-form">
+            <h1>Citizen Feedback Login</h1>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+            <p class="error-message" id="error-message"></p>
+        </form>
+    </div>
+
+    <script>
+        document.querySelector('.login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username === '' || password === '') {
+                document.getElementById('error-message').textContent = 'Please fill in all fields.';
+            } else {
+                // Proceed with login logic (e.g., API call)
+                console.log('Logging in with', username);
+            }
+        });
+    </script>
+</body>
+</html>
