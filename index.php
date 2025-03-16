@@ -133,8 +133,8 @@
         </nav>
 
         <div class="buttons d-flex flex-row gap-3 justify-content-center align-items-center justify-content-center  pt-sm-5">
-        <button type="button" onclick="window.location='./auth/index.php'" class="btn btn-light">Login</button>
-        <button type="button" onclick="window.location='./auth/signup.php'" class="btn btn-success">Register</button>
+        <button type="button" onclick="window.location='./dashboard/index.php'" class="btn btn-light">Login</button>
+        <button type="button" onclick="window.location='./dashboard/signup.php'" class="btn btn-success">Register</button>
         </div>
         </div>
     </header>
